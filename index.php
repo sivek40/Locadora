@@ -25,9 +25,8 @@
                 </div>
                 <div id="navbar" class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="#">Catálogo</a></li>
-                        <li><a href="#about">Cadastro de filmes</a></li>
-                        <li><a href="#contact">Locação</a></li>
+                        <li class="active"><a href="index.php">Catálogo</a></li>
+                        <li><a href="cadastro.php">Cadastro de filmes</a></li>
                         <li><a href="#contact">Locação</a></li>
                         <li><a href="#contact">Clientes</a></li>
                     </ul>
