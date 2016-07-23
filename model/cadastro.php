@@ -16,9 +16,8 @@ $sql = "INSERT INTO catalogo (nome, sinopse, ano, tipo, midia, disponivel, categ
         . "".$_POST['disponivel'].", "
         . "'".$_POST['categoria']."')";
 
-try {
-    $dbcon->exec($sql);
-} catch (Exception $e)
-{
-    echo $e->getMessage();
+if ($dbcon->exec($sql) === false){
+    echo '{"status": "erro"}';
+} else {
+    echo '{"status": "ok"}';
 }

@@ -38,23 +38,26 @@
         </nav>
 
         <div class="container">
-            <form class="form-horizontal" action="/model/cadastro.php" method="POST">
+            <!-- <form class="form-horizontal" action="/model/cadastro.php" method="POST"> -->
+            <form class="form-horizontal" id="form-cadastro">
                 <fieldset>
 
                     <!-- Form Name -->
                     <legend>Cadastro de Filme</legend>
-
+                    
+                    <div class="row" id="alertas">
+                    </div>
+                    
                     <!-- Text input-->
-                    <div class="form-group">
+                    <div class="form-group has-feedback">
                         <label class="col-md-4 control-label" for="nome">Título do filme</label>  
                         <div class="col-md-4">
-                            <input id="nome" name="nome" type="text" placeholder="Título do filme" class="form-control input-md" required="">
-
+                            <input id="nome" name="nome" type="text" placeholder="Título do filme" class="form-control input-md">
                         </div>
                     </div>
 
                     <!-- Textarea -->
-                    <div class="form-group">
+                    <div class="form-group has-feedback">
                         <label class="col-md-4 control-label" for="sinopse">Sinopse</label>
                         <div class="col-md-4">                     
                             <textarea class="form-control" id="sinopse" name="sinopse"></textarea>
@@ -62,7 +65,7 @@
                     </div>
 
                     <!-- Select Multiple -->
-                    <div class="form-group">
+                    <div class="form-group has-feedback">
                         <label class="col-md-4 control-label" for="categoria">Categoria do filme</label>
                         <div class="col-md-4">
                             <select id="categoria" name="categoria" class="form-control" multiple="multiple">
@@ -78,7 +81,7 @@
                     </div>
 
                     <!-- Select Basic -->
-                    <div class="form-group">
+                    <div class="form-group has-feedback">
                         <label class="col-md-4 control-label" for="ano">Ano de lançamento</label>
                         <div class="col-md-4">
                             <select id="ano" name="ano" class="form-control">
@@ -87,7 +90,7 @@
                     </div>
 
                     <!-- Multiple Radios -->
-                    <div class="form-group">
+                    <div class="form-group has-feedback">
                         <label class="col-md-4 control-label" for="tipo">Tipo de cadastro</label>
                         <div class="col-md-4">
                             <div class="radio">
@@ -106,19 +109,19 @@
                     </div>
 
                     <!-- Text input-->
-                    <div class="form-group">
+                    <div class="form-group has-feedback">
                         <label class="col-md-4 control-label" for="disponivel">Quantidade disponível</label>  
                         <div class="col-md-4">
-                            <input id="disponivel" name="disponivel" type="text" placeholder="Quantidade disponível" class="form-control input-md" required="">
-
+                            <input id="disponivel" name="disponivel" type="text" placeholder="Quantidade disponível" class="form-control input-md">
                         </div>
                     </div>
 
                     <!-- Select Basic -->
-                    <div class="form-group">
+                    <div class="form-group has-feedback">
                         <label class="col-md-4 control-label" for="midia">Mídia do filme</label>
                         <div class="col-md-4">
                             <select id="midia" name="midia" class="form-control">
+                                <option value="">-- Selecione --</option>
                                 <option value="DVD">DVD</option>
                                 <option value="BluRay">BluRay</option>
                                 <option value="VHS">VHS</option>
