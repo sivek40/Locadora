@@ -4,42 +4,22 @@
         <meta charset="UTF-8">
         <title>Locadora</title>
 
-        <link href="css/bootstrap.css" rel="stylesheet"/>
-        <link href="css/principal.css" rel="stylesheet"/>
+        <link href="/css/bootstrap.css" rel="stylesheet"/>
+        <link href="/css/principal.css" rel="stylesheet"/>
 
-        <script type="text/javascript" src="js/jquery-2.2.4.js"></script>
-        <script type="text/javascript" src="js/bootstrap.min.js"></script>
-        <script type="text/javascript" src="js/cadastro.js"></script>
+        <script type="text/javascript" src="/js/jquery-2.2.4.js"></script>
+        <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="/js/cadastro.js"></script>
     </head>
     <body>
-        <nav class="navbar navbar-inverse navbar-static-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="#">Locadora</a>
-                </div>
-                <div id="navbar" class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav">
-                        <li><a href="index.php">Catálogo</a></li>
-                        <li class="active"><a href="cadastro.php">Cadastro de filmes</a></li>
-                        <li><a href="#contact">Locação</a></li>
-                        <li><a href="#contact">Clientes</a></li>
-                    </ul>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li class="active"><a href="#">Logout</a></li>
-                    </ul>
-                </div><!--/.nav-collapse -->
-            </div>
-        </nav>
+
+        <?php include 'menu.php'; ?>
 
         <div class="container">
             <!-- <form class="form-horizontal" action="/model/cadastro.php" method="POST"> -->
             <form class="form-horizontal" id="form-cadastro">
+                <input type="hidden" name="id" id="id"/>
+                
                 <fieldset>
 
                     <!-- Form Name -->
@@ -68,7 +48,7 @@
                     <div class="form-group has-feedback">
                         <label class="col-md-4 control-label" for="categoria">Categoria do filme</label>
                         <div class="col-md-4">
-                            <select id="categoria" name="categoria" class="form-control" multiple="multiple">
+                            <select id="categoria" name="categoria[]" class="form-control" multiple="multiple">
                                 <option value="Ação">Ação</option>
                                 <option value="Comédia">Comédia</option>
                                 <option value="Romance">Romance</option>
@@ -112,7 +92,7 @@
                     <div class="form-group has-feedback">
                         <label class="col-md-4 control-label" for="disponivel">Quantidade disponível</label>  
                         <div class="col-md-4">
-                            <input id="disponivel" name="disponivel" type="text" placeholder="Quantidade disponível" class="form-control input-md">
+                            <input id="disponivel" name="disponivel" type="text" placeholder="Quantidade disponível" class="form-control input-md quant">
                         </div>
                     </div>
 
