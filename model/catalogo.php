@@ -1,9 +1,7 @@
   
 <?php
 
-$strcon = 'sqlite:locadora.sqlite';
-
-$dbcon = new PDO($strcon);
+require_once './dbconnect.php';
 
 $sql = 'SELECT * FROM catalogo';
 
