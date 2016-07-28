@@ -108,6 +108,15 @@
                             </select>
                         </div>
                     </div>
+                    
+                    <!-- File Button --> 
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="capa">Capa do Filme</label>
+                        <div class="col-md-4">
+                            <input id="capa" name="capa" class="input-file" type="file">
+                        </div>
+                    </div>
+
                     <!-- Button -->
                     <div class="form-group">
                         <label class="col-md-4 control-label" for="enviar"></label>

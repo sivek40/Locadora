@@ -1,9 +1,44 @@
 $(document).ready(function(){
-    $.getJSON('/model/catalogo.php', function(data){
+    
+    getCatalogo();
+    
+    $('#filtro button').click(function(){
+        $(this).parent().find('button').removeClass('active');
+        $(this).addClass('active');
+        getCatalogo();
+    });
+    
+    $('#filtro-categoria').change(function(){
+        getCatalogo();
+    });
+    
+    $('#filtro-nome').keyup(function(evento){
+        console.log($(this).offset());
+        getCatalogo();
+    });
+});
+
+function getCatalogo(){
+    
+    var param = {
+        filtro: $('#filtro button.active').attr('data-target'),
+        categoria: $('#filtro-categoria').val(),
+        nome: $('#filtro-nome').val()
+    }
+    
+    $('#catalogo tbody').empty();
+    
+    $.getJSON('/model/catalogo.php', param, function(data){
+        
+        if(data.length == 0){
+            $('<tr><td>Não existem filmes para o filtro selecionado.</td></tr>')
+                .appendTo('#catalogo tbody');
+            return;
+        }
 
         $(data).each(function(idx, elem){
             
-            var lancamento = (elem.tipo == "catalogo")? 'glyphicon glyphicon-star-empty' : 'glyphicon glyphicon-star';
+            var lancamento = (elem.tipo == "Catálogo")? 'glyphicon glyphicon-star-empty' : 'glyphicon glyphicon-star';
             
             var filme = $('<tr data-status="pagado">'
                 +'<td>'
@@ -29,11 +64,12 @@ $(document).ready(function(){
                                 +'<span class="pull-right pagado">'+elem.categoria+'</span>'
                             +'</h4>'
                             +'<p class="summary">'+elem.sinopse+'</p>'
+                            +'<span class="pull-right">Quantidade disponível: <b>'+elem.disponivel+'</b>'
                         +'</div>'
                     +'</div>'
                 +'</td>'
             +'</tr>');
             $(filme).appendTo('#catalogo tbody');
         })
-    })
-});
+    })    
+}

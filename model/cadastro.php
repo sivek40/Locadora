@@ -6,6 +6,8 @@ error_reporting(E_ALL);
 require_once './dbconnect.php';
 
 if ($_SERVER["REQUEST_METHOD"] === 'POST') {
+    
+    var_dump($_FILES)
 
     if ($_POST['id'] > 0) {
         $sql = "UPDATE catalogo SET nome='".$_POST['nome']."', "

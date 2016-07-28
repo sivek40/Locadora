@@ -20,7 +20,7 @@ $(document).ready(function() {
 
         var dados = $(this).serialize();
 
-        $.post('/model/cadastro.php', dados).done(function(retorno) {
+        $.post('/model/clientes.php', dados).done(function(retorno) {
 
             var retorno = JSON.parse(retorno);
 
@@ -59,7 +59,7 @@ function validaForm(form) {
 
     var valido = true;
 
-    $(form).find('input').each(function(idx, elem) {
+    $(form).find('input[type="text"]').each(function(idx, elem) {
         if ($(elem).val() == '') {
             valido = false;
             $(elem).parent().parent().addClass('has-error');

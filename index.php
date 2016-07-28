@@ -22,13 +22,28 @@
                     <div class="col-md-12">
                         <div class="panel panel-default">
                             <div class="panel-body">
+                                <div class="col-md-3">
+                                    <input type="text" id="filtro-nome" class="form-control" placeholder="Nome do filme">
+                                </div>
                                 <div class="pull-right">
-                                    <div class="btn-group">
-                                        <button type="button" class="btn btn-success btn-filter" data-target="pagado">Pagado</button>
-                                        <button type="button" class="btn btn-warning btn-filter" data-target="pendiente">Pendiente</button>
-                                        <button type="button" class="btn btn-danger btn-filter" data-target="cancelado">Cancelado</button>
-                                        <button type="button" class="btn btn-default btn-filter" data-target="all">Todos</button>
+                                    <div class="btn-group" id="filtro">
+                                        <button type="button" class="btn btn-success btn-filter" data-target="lancamentos">Lançamentos</button>
+                                        <button type="button" class="btn btn-warning btn-filter" data-target="catalogos">Catálogos</button>
+                                        <button type="button" class="btn btn-danger btn-filter" data-target="disponiveis">Disponíveis</button>
+                                        <button type="button" class="btn btn-primary btn-filter active" data-target="all">Todos</button>
                                     </div>
+                                </div>
+                                <div class="col-md-3 pull-right">
+                                    <select id="filtro-categoria" class="form-control">
+                                        <option value="">--Categoria--</option>
+                                        <option value="Ação">Ação</option>
+                                        <option value="Comédia">Comédia</option>
+                                        <option value="Romance">Romance</option>
+                                        <option value="Ficção">Ficção</option>
+                                        <option value="Terror">Terror</option>
+                                        <option value="Aventura">Aventura</option>
+                                        <option value="Infantil">Infantil</option>
+                                    </select>
                                 </div>
                                 <div class="table-container">
                                     <table id="catalogo" class="table table-filter">
@@ -50,5 +65,8 @@
             </div>
         </div>        
 
+        <table id="tbl-autocomplete">
+            
+        </table>
     </body>
 </html>
