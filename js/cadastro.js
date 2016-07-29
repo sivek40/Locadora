@@ -70,6 +70,7 @@ $(document).ready(function() {
             if (retorno.status == 'ok') {
                 $('input, select, textarea').val('');
                 $('#form-cadastro div.form-group:first').find('input, select, textarea').focus();
+                
                 if ($('input id').val() == '') {
                     var incAlt = "adicionado";
                 } else {
@@ -89,6 +90,24 @@ $(document).ready(function() {
             }
             $('#alertas').append(alerta);
         });
+    });
+    
+    $('#capa').change(function(){
+        var file = this.files[0];
+        var img = $('#img-capa');
+        img.removeClass('hide');
+        var reader = new FileReader(); 
+        reader.onload = (function(aImg){
+            return function(e) {
+                var imgsrc = e.target.result;
+                aImg.attr('src', imgsrc);
+                $('#img-src').val(imgsrc);
+            };
+        })(img);
+        reader.readAsDataURL(file);
+        
+        var filename = file.name.split('.');
+        $('#img-ext').val(filename[filename.length-1]);
     });
 });
 

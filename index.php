@@ -1,4 +1,8 @@
-<!DOCTYPE html>
+<?php
+    if(!isset($_COOKIE['locadora'])) {
+        header('Location: /login.php');
+    };
+?>
 <html>
     <head>
         <meta charset="UTF-8">

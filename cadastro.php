@@ -17,7 +17,7 @@
 
         <div class="container">
             <!-- <form class="form-horizontal" action="/model/cadastro.php" method="POST"> -->
-            <form class="form-horizontal" id="form-cadastro">
+            <form class="form-horizontal" id="form-cadastro" enctype="multipart/form-data">
                 <input type="hidden" name="id" id="id"/>
                 
                 <fieldset>
@@ -113,7 +113,10 @@
                     <div class="form-group">
                         <label class="col-md-4 control-label" for="capa">Capa do Filme</label>
                         <div class="col-md-4">
+                            <img id="img-capa" width="100" height="150" src="" class="hide"</>
                             <input id="capa" name="capa" class="input-file" type="file">
+                            <input type="hidden" id="img-src" name="img-src">
+                            <input type="hidden" id="img-ext" name="img-ext">
                         </div>
                     </div>
 
