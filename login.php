@@ -20,7 +20,7 @@
                     </div>
 
                     <div class="panel-body">
-                        <form role="form" action="/model/login.php">
+                        <form role="form" action="/model/login.php" method="POST">
                             <div class="alert alert-danger">
                                 <a class="close" data-dismiss="alert" href="#">×</a>Usuário ou senha incorreto!
                             </div>
