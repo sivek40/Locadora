@@ -21,12 +21,14 @@ $prepare->execute(array($_POST['username'], $password));
 $usuario = $prepare->fetch(PDO::FETCH_ASSOC);
 
 if ($usuario != false) {
-    $time = ($_POST['remember'] == 1)? mktime() + (7 * 24 * 60 * 60) : 0;
+    $time = (isset($_POST['remember']))? mktime() + (7 * 24 * 60 * 60) : 0;
     //setcookie('locadora', 'logado', $time, '/');
     setcookie('locadora', json_encode($usuario), $time, '/');
-    header('Location: ../index.php');
+    //header('Location: ../index.php');
+    echo '{"status":"ok"}';
 } else {
-    echo 'usuário ou senha inválidos!';
+    //echo 'usuário ou senha inválidos!';
+    echo '{"msg":"Usuário ou senha incorretos!", "status":"erro"}';
 }
 
 

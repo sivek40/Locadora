@@ -9,7 +9,7 @@
 
         <script type="text/javascript" src="js/jquery-2.2.4.js"></script>
         <script type="text/javascript" src="js/bootstrap.min.js"></script>
-        <script type="text/javascript" src="js/catalogo.js"></script>
+        <script type="text/javascript" src="js/login.js"></script>
     </head>
     <body>
         <div class="container" style="margin-top:30px">
@@ -20,9 +20,9 @@
                     </div>
 
                     <div class="panel-body">
-                        <form role="form" action="/model/login.php" method="POST">
-                            <div class="alert alert-danger">
-                                <a class="close" data-dismiss="alert" href="#">×</a>Usuário ou senha incorreto!
+                        <form role="form" action="/model/login.php" method="POST" id="form-login">
+                            <div class="alert alert-danger" id="alert-erro">
+                                Usuário ou senha incorretos!
                             </div>
                             <div style="margin-bottom: 12px" class="input-group">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
@@ -37,7 +37,7 @@
                             <div class="input-group">
                                 <div class="checkbox" style="margin-top: 0px;">
                                     <label>
-                                        <input id="login-remember" type="checkbox" name="remember" value="1"> Lembrar me
+                                        <input id="login-remember" type="checkbox" name="remember" value="1"> Lembrar-me
                                     </label>
                                 </div>
                             </div>
